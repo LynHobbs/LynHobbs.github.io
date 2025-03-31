@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Polytech Campus Navigation Site</title>
+	<link rel="stylesheet" href="../NapkinSite.css"></link>
+</head>
+<header>
+	<div id="SmallTitlePlaque">
+		<img src="../Images/PolytechNavLogo.png" alt="PolyNav Logo" width="100%">
+	</div>
+</header>
+<body>
+	<div id="NavWindow">
+		<h3>You're here!</h3>
+		<img src="../Images/IBCommons.jpg" height="600px" width="600px"></img>
+	</div>
+	<div id="ErrorWindow">
+		<button class="collapsible">Something is wrong!</button>
+			<div class="content">
+					<a href="../Index.html"><img src="../Images/ReturnButton.png" width="25%" alt="Return to the lobby."></img></a>
+					<a href="../Index.html"><img src="../Images/BrokenButton.png" width="25%" alt="This photo is wrong."></img></a>
+			</div>
+	</div>
+	<script>
+		var coll = document.getElementsByClassName("collapsible");
+		var i;
+
+		for (i = 0; i < coll.length; i++) {
+			coll[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var content = this.nextElementSibling;
+				if (content.style.maxHeight){
+					content.style.maxHeight = null;
+				} else {
+					content.style.maxHeight = content.scrollHeight + "px";
+				}
+			});
+		}
+	</script>
+</body>
+</html>
